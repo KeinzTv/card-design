@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../assets/fonts/Nunito.ttf');
+}
+
+:root {
+    --color-main: #2958df;
+
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-blue: #89a4ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    user-select: none;
+
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    color: var(--color-white);
+
+    background: rgb(131,188,255);
+    background: linear-gradient(135deg, rgb(82, 164, 255) 0%, rgb(29,18,193) 96%);
+
+    overflow: hidden;
+
+    cursor: url("../assets/resources/cursor.png"), auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.cursor {
+    z-index: 99;
+
+    position: fixed;
+    pointer-events: none;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+
+    transform: translate(-50%, -50%);
+
+    top: -25px;
+    left: -25px;
+
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.focus {
+    width: 25px;
+    height: 25px;
+}
+
+.bubble {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: var(--color-blue);
+
+    top: 20%;
+    left: 27%;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 5px 5px 5px 0;
+
+    animation: bubble 5s ease-in-out infinite;
+}
+
+.card {
+    width: 650px;
+    height: 400px;
+
+    overflow: hidden;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+
+
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 5px 5px 5px 0;
+}
+
+.card::before {
+    content: '';
+
+    position: absolute;
+    width: 600px;
+    height: 500px;
+
+    top: -10%;
+    right: -50%;
+
+    background-color: transparent;
+    border: 70px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.card::after {
+    content: '';
+
+    position: absolute;
+    width: 400px;
+    height: 300px;
+
+    top: 30%;
+    right: -40%;
+
+    background-color: transparent;
+    border: 50px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+#visa {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    right: 60px;
+}
+
+#microchip {
+    width: 70px;
+    height: fit-content;
+}
+
+#info-container {
+    width: auto;
+    height: calc(100% - 50px);
+
+    display: flex;
+    justify-content: flex-end;
+
+    flex-direction: column;
+
+    row-gap: 15px;
+
+    margin: 0 50px;
+}
+
+p {
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+ul {
+    font-size: 1.15rem;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+li:last-child {
+    display: flex;
+    gap: 40px;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, 15px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}

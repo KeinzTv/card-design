@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="assets/resources/microchip.png" type="image/png">
+
+        <title>Card Design</title>
+    </head>
+    <body>
+        <main>
+            <div class="cursor"></div>
+
+            <div class="bubble"></div>
+
+            <div class="card">
+                <img id="visa" src="assets/resources/visa.png" alt="visa-logo" draggable="false" />
+
+                <div id="info-container">
+                    <img id="microchip" src="assets/resources/microchip.png" alt="microchip-logo" draggable="false" />
+                    <p>1234 5678 1234 5678</p>
+
+                    <ul>
+                        <li>JOHN DOE</li>
+                        <li><span>12/34</span><span>123</span></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script type="text/javascript" src="js/libs/vanilla-tilt.min.js"></script>
+        <script type="text/javascript">
+            VanillaTilt.init(document.querySelector(".card"), {
+              max: 15,
+              speed: 200,
+              glare: true,
+              "max-glare": 0.35,
+            });
+        </script>
+    </body>
+</html>
