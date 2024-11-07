@@ -1,1 +1,1 @@
-# This website is just a test of the famous glassmorphism
+# A simple test for glassmorphism
