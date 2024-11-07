@@ -1,1 +1,1 @@
-# A simple test for glassmorphism
+# A simple test of glassmorphism
