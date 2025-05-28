@@ -1,3 +1,4 @@
+const body = document.getElementsByTagName('body').item(0);
 const cursor = document.querySelector('.cursor');
 const card = document.querySelector('.card');
 
@@ -12,4 +13,12 @@ card.addEventListener('mouseenter', () => {
 
 card.addEventListener('mouseleave', () => {
   cursor.classList.remove('focus');
+});
+
+body.addEventListener('mouseenter', () => {
+  cursor.style.opacity = "1";
+});
+
+body.addEventListener('mouseleave', () => {
+  cursor.style.opacity = "0";
 });
